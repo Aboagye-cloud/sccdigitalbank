@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SCC Digital Bank - Support Center</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="css/common.css" />
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #ffffff;
+            color: #fff;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .bank-logo {
+            height: 100px;
+            width: auto;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: #00a896;
+        }
+
+        nav a {
+            color: #000000;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 15px;
+            transition: color 0.3s;
+            font-weight: bold; 
+        }
+
+        nav a:hover {
+            color: #00a896;
+        }
+
+        .support-hero {
+            background: linear-gradient(rgba(12, 35, 64, 0.8), rgba(12, 35, 64, 0.85)), url('images/support.png') no-repeat center center;
+            background-size: cover;
+            color: #ffffff;
+            text-align: center;
+            padding: 80px 20px; 
+        }
+
+        .support-hero h2 {
+            margin: 0 0 15px 0;
+            font-size: 32px;
+            font-weight: 600;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3); 
+        }
+
+        .support-hero p {
+            margin: 0 0 25px 0;
+            font-size: 16px;
+            opacity: 0.95;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        }
+
+        .search-wrapper {
+            max-width: 550px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .search-wrapper i {
+            position: absolute;
+            left: 20px;
+            top: 17px;
+            color: #888;
+            font-size: 18px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 15px 20px 15px 55px;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            box-sizing: border-box;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            outline: none;
+            font-family: inherit;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .category-card {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            text-align: center;
+            border-top: 4px solid #00a896;
+            transition: transform 0.3s;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .category-card i {
+            font-size: 36px;
+            color: #0c2340;
+            margin-bottom: 15px;
+        }
+
+        .category-card h3 {
+            margin: 0 0 10px 0;
+            color: #333;
+            font-size: 20px;
+        }
+
+        .category-card p {
+            margin: 0;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .section-title {
+            color: #0c2340;
+            font-size: 24px;
+            margin-bottom: 25px;
+            border-left: 5px solid #00a896;
+            padding-left: 12px;
+        }
+
+        .faq-wrapper {
+            margin-bottom: 50px;
+        }
+
+        .faq-item {
+            background: #ffffff;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            overflow: hidden;
+        }
+
+        .faq-header {
+            padding: 20px;
+            background: #ffffff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 600;
+            color: #444;
+            user-select: none;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .faq-header:hover {
+            background: #fcfdfe;
+            color: #00a896;
+        }
+
+        .faq-header i {
+            transition: transform 0.3s;
+            color: #888;
+        }
+
+        .faq-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background: #fafbfc;
+        }
+
+        .faq-content {
+            padding: 20px;
+            font-size: 15px;
+            color: #555;
+            border-top: 1px solid #f1f3f2;
+            text-align: justify;
+        }
+
+        .faq-item.active .faq-header i {
+            transform: rotate(180deg);
+            color: #00a896;
+        }
+
+        .ticket-info-box {
+            background-color: #f0faf8;
+            border-left: 5px solid #00a896;
+            padding: 30px;
+            border-radius: 0 8px 8px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .ticket-text h3 {
+            margin: 0 0 8px 0;
+            color: #007a6c;
+            font-size: 22px;
+        }
+
+        .ticket-text p {
+            margin: 0;
+            color: #555;
+            font-size: 15px;
+        }
+
+        .btn-ticket {
+            background-color: #0c2340;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 14px 25px;
+            font-weight: bold;
+            border-radius: 4px;
+            white-space: nowrap;
+            transition: background-color 0.3s;
+            box-shadow: 0 4px 10px rgba(12,35,64,0.2);
+        }
+
+        .btn-ticket:hover {
+            background-color: #000000;
+        }
+
+        @media (max-width: 900px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            nav {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+            nav a {
+                margin: 5px 10px;
+                font-size: 14px;
+            }
+            .support-hero {
+                padding: 50px 15px;
+            }
+            .support-hero h2 {
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .ticket-info-box {
+                flex-direction: column;
+                text-align: center;
+            }
+            .btn-ticket {
+                width: 100%;
+                text-align: center;
+                box-sizing: border-box;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 12px;
+            }
+            .category-card {
+                padding: 20px;
+            }
+            .faq-header {
+                padding: 15px;
+                font-size: 14px;
+            }
+            .faq-content {
+                padding: 15px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="images/logo.png" alt="SCC Bank Logo" class="bank-logo" />
+            <span class="logo-text">SCC DIGITAL BANK</span>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="about.html">About Us</a>
+            <a href="blog.html">Blog</a>
+            <a href="careers.html">Careers</a>
+            <a href="contact.html">Contact</a>
+            <a href="support.html" class="active">Support</a>
+        </nav>
+    </header>
+
+    <div class="support-hero">
+        <h2>How can we help you today?</h2>
+        <p>Search our official support registry or browse popular help categories below.</p>
+        <div class="search-wrapper">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="supportSearch" class="search-input" placeholder="Type keywords (e.g., password reset, active card)..." />
+        </div>
+    </div>
+
+    <div class="container">
+        
+        <div class="categories-grid" id="categoriesGrid">
+            <div class="category-card">
+                <i class="fa-solid fa-laptop-code"></i>
+                <h3>Digital Banking</h3>
+                <p>Troubleshoot platform access, transaction tokens, and interactive portal logins.</p>
+            </div>
+            <div class="category-card">
+                <i class="fa-solid fa-shield-halved"></i>
+                <h3>Security & Privacy</h3>
+                <p>Manage multi-factor authentication credentials and view modern cybersecurity advice.</p>
+            </div>
+            <div class="category-card">
+                <i class="fa-solid fa-credit-card"></i>
+                <h3>Accounts & Cards</h3>
+                <p>Information on opening high-yield checking portals, tracking limits, and deposits.</p>
+            </div>
+        </div>
+        <p class="no-results-message" id="noCategoryResults">No help categories match your search.</p>
+
+        <h3 class="section-title">Frequently Asked Questions</h3>
+        <div class="faq-wrapper" id="faqWrapper">
+
+            <div class="faq-item">
+                <div class="faq-header">
+                    <span>How do I securely reset my online account credentials?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="faq-body">
+                    <div class="faq-content">
+                        To securely update or reset your login credentials, click on the "Forgot Password" resource on the portal gate view. You will instantly receive a system verification link containing a timed, secure multi-factor numeric passphrase via your registered mobile line or email index.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-header">
+                    <span>What should I do if I suspect fraudulent transaction behaviors?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="faq-body">
+                    <div class="faq-content">
+                        If you spot or receive alert flags indicating transactions you did not initiate, please lock your operational card profile immediately via your user options interface. Once locked, reach out to our active technical team right away through customercare@sccdigitalbank.com.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-header">
+                    <span>Are there service charges applied to instant digital platform transfers?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="faq-body">
+                    <div class="faq-content">
+                        At SCC Digital Bank, all foundational operational actions, real-time account-to-account clearings, and normal monthly portfolio maintenance procedures carry zero internal processing transaction fees. External international settlement rates may vary.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-header">
+                    <span>How long does it take for standard support inquiries to get reviewed?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="faq-body">
+                    <div class="faq-content">
+                        Our internal ticketing system routes and queues submissions immediately. For official items sent directly during open service team hours (Monday through Friday, 08:00 to 17:00 GMT), our team aims to provide comprehensive written updates within 2 to 4 business hours.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <p class="no-results-message" id="noFaqResults">No FAQs match your search. Try a different keyword, or submit a support ticket below.</p>
+
+        <div class="ticket-info-box">
+            <div class="ticket-text">
+                <h3>Still need assistance?</h3>
+                <p>If your specific inquiry is not listed inside our help topics, please open an official documentation inquiry with our team.</p>
+            </div>
+            <a href="contact.html" class="btn-ticket">Submit Support Ticket</a>
+        </div>
+
+    </div>
+
+    <button type="button" id="btnBackToTop" title="Go to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script src="js/common.js"></script>
+    <script src="js/support.js"></script>
+
+</body>
+</html>

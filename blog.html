@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCC Digital Bank - Insights & Blog</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="css/common.css" />
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #ffffff;
+            color: #fff;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .bank-logo {
+            height: 100px;
+            width: auto;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: #00a896;
+        }
+
+        nav a {
+            color: #000000;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 15px;
+            transition: color 0.3s;
+            font-weight: bold; 
+        }
+
+        nav a:hover {
+            color: #00a896;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .blog-header {
+            border-left: 5px solid #00a896;
+            padding-left: 15px;
+            margin-bottom: 40px;
+        }
+
+        .blog-header h2 {
+            color: #0056b3;
+            margin: 0;
+            font-size: 32px;
+        }
+
+        .blog-card {
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            overflow: hidden;
+            gap: 20px;
+        }
+
+        .blog-card.reverse {
+            grid-template-columns: 1.2fr 1fr;
+        }
+
+        .blog-image-wrapper {
+            width: 100%;
+            height: 100%;
+            min-height: 250px;
+            background-color: #f0faf8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .blog-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .blog-content {
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .blog-content h3 {
+            color: #00a896;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+
+        .blog-content p {
+            font-size: 15px;
+            margin-bottom: 15px;
+            text-align: justify;
+            color: #555;
+        }
+
+        @media (max-width: 900px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            .bank-logo {
+                height: 70px;
+            }
+            nav {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+            nav a {
+                margin: 5px 10px;
+                font-size: 14px;
+            }
+            .blog-card, .blog-card.reverse {
+                grid-template-columns: 1fr;
+            }
+            .blog-image-wrapper {
+                height: 200px;
+                min-height: 200px;
+            }
+            .blog-content {
+                padding: 24px;
+            }
+            .blog-header h2 {
+                font-size: 26px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 12px;
+            }
+            .blog-content {
+                padding: 18px;
+            }
+            .blog-content h3 {
+                font-size: 19px;
+            }
+            .blog-content p {
+                font-size: 14px;
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="images/logo.png" alt="SCC Bank Logo" class="bank-logo" />
+            <span class="logo-text">SCC DIGITAL BANK</span>
+        </div>
+        <nav>
+            <a href="index.html">Home</a> <a href="services.html">Services</a>
+            <a href="about.html">About Us</a>
+            <a href="blog.html" class="active">Blog</a>
+            <a href="careers.html">Careers</a>
+            <a href="contact.html">Contact</a>
+            <a href="support.html">Support</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        
+        <div class="blog-header">
+            <h2>Insights & Financial Tips</h2>
+        </div>
+
+        <div class="blog-card">
+            <div class="blog-image-wrapper">
+                <img src="images/digital.png" alt="The Future of Banking Is Digital" class="blog-img" />
+            </div>
+            <div class="blog-content">
+                <h3>The Future of Banking Is Digital</h3>
+                <p>The banking industry is evolving faster than ever, and digital banking is leading the transformation. Customers no longer want to visit physical branches for routine transactions. They expect speed, convenience, and security at their fingertips.</p>
+                <p>At SCC Digital Bank, we are committed to delivering a seamless digital banking experience. From opening accounts online to transferring funds instantly, our platform empowers customers to manage their finances from anywhere in the world.</p>
+                <p>As technology continues to advance, digital banking will become even more personalized, efficient, and accessible. SCC Digital Bank is proud to be at the forefront of this financial revolution.</p>
+            </div>
+        </div>
+
+        <div class="blog-card reverse">
+            <div class="blog-content">
+                <h3>Five Smart Ways to Save More Money</h3>
+                <p>Saving money is one of the most important steps toward financial freedom. Yet many people struggle to build consistent savings habits.</p>
+                <p>Start by creating a monthly budget and tracking your expenses. Set realistic savings goals and automate transfers to your savings account. Avoid unnecessary purchases and focus on long-term financial priorities.</p>
+                <p>At SCC Digital Bank, our high-yield savings accounts help customers grow their money while maintaining easy access to their funds. Small savings made consistently can lead to significant financial success over time.</p>
+                <p>Remember, every financial journey begins with a single step. Start saving today and build a stronger tomorrow.</p>
+            </div>
+            <div class="blog-image-wrapper">
+                <img src="images/savings.png" alt="Five Smart Ways to Save More Money" class="blog-img" />
+            </div>
+        </div>
+
+        <div class="blog-card">
+            <div class="blog-image-wrapper">
+                <img src="images/business.png" alt="How Businesses Benefit from Digital Banking" class="blog-img" />
+            </div>
+            <div class="blog-content">
+                <h3>How Businesses Benefit from Digital Banking</h3>
+                <p>Modern businesses need banking solutions that keep pace with today's fast-moving economy. Traditional banking processes can often slow down operations and limit growth opportunities.</p>
+                <p>Digital banking provides businesses with faster payments, easier payroll management, improved cash-flow tracking, and convenient access to financing options. Business owners can manage their accounts 24/7 without the need to visit a bank branch.</p>
+                <p>SCC Digital Bank offers tailored business solutions designed to help companies streamline operations and focus on growth. Whether you're a startup or an established enterprise, our digital tools help you operate more efficiently and serve your customers better.</p>
+            </div>
+        </div>
+
+        <div class="blog-card reverse">
+            <div class="blog-content">
+                <h3>Protecting Your Finances in a Digital World</h3>
+                <p>As online banking continues to grow, cybersecurity has become more important than ever. Fraudsters are constantly developing new methods to target individuals and businesses, making security a shared responsibility.</p>
+                <p>Customers should use strong passwords, enable multi-factor authentication, and avoid sharing sensitive information with unverified sources. Staying informed about common scams can significantly reduce the risk of fraud.</p>
+                <p>At SCC Digital Bank, we protect customer accounts with advanced encryption, real-time monitoring, and instant fraud alerts. Our commitment to security ensures that customers can bank with confidence, knowing their information is safeguarded by industry-leading technology.</p>
+                <p>Together, we can build a safer digital banking environment for everyone.</p>
+            </div>
+            <div class="blog-image-wrapper">
+                <img src="images/protecting.png" alt="Protecting Your Finances in a Digital World" class="blog-img" />
+            </div>
+        </div>
+
+    </div>
+
+    <button type="button" id="btnBackToTop" title="Go to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script src="js/common.js"></script>
+</body>
+</html>

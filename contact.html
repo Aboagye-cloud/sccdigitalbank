@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCC Digital Bank - Contact Us</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="css/common.css" />
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #ffffff;
+            color: #fff;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .bank-logo {
+            height: 100px;
+            width: auto;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: #00a896;
+        }
+
+        nav a {
+            color: #000000;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 15px;
+            transition: color 0.3s;
+            font-weight: bold; 
+        }
+
+        nav a:hover {
+            color: #00a896;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 40px;
+        }
+
+        .contact-form-container {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .contact-form-container h2 {
+            color: #00a896;
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+
+        .contact-form-container p {
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .status-alert {
+            display: none;
+            background-color: #e6f7f4;
+            border-left: 4px solid #00a896;
+            color: #007a6c;
+            padding: 15px;
+            margin-bottom: 25px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #444;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 15px;
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
+
+        .form-control:focus {
+            border-color: #00a896;
+            outline: none;
+        }
+
+        .btn-submit {
+            background-color: #00a896;
+            color: #ffffff;
+            border: none;
+            padding: 14px 28px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+
+        .btn-submit:hover {
+            background-color: #008575;
+        }
+
+        .info-panel {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .info-section {
+            margin-bottom: 35px;
+        }
+
+        .info-section h3 {
+            color: #0056b3;
+            font-size: 20px;
+            margin-top: 0;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #f4f7f6;
+            padding-bottom: 5px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .info-item i {
+            color: #00a896;
+            font-size: 18px;
+            margin-top: 4px;
+            width: 20px;
+            text-align: center;
+        }
+
+        .info-item p {
+            margin: 0;
+            font-size: 15px;
+            color: #444;
+        }
+
+        .info-item a {
+            color: #00a896;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .info-item a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 900px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            .bank-logo {
+                height: 70px;
+            }
+            nav {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+            nav a {
+                margin: 5px 10px;
+                font-size: 14px;
+            }
+            .container {
+                grid-template-columns: 1fr;
+                margin: 20px auto;
+            }
+            .contact-form-container, .info-panel {
+                padding: 25px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                margin: 12px auto;
+                padding: 0 12px;
+            }
+            .contact-form-container, .info-panel {
+                padding: 18px;
+            }
+            .contact-form-container h2 {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="images/logo.png" alt="SCC Bank Logo" class="bank-logo" />
+            <span class="logo-text">SCC DIGITAL BANK</span>
+        </div>
+        <nav>
+            <a href="index.html">Home</a> <a href="services.html">Services</a>
+            <a href="about.html">About Us</a>
+            <a href="blog.html">Blog</a>
+            <a href="careers.html">Careers</a>
+            <a href="contact.html" class="active">Contact</a>
+            <a href="support.html">Support</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        
+        <div class="contact-form-container">
+            <h2>Get Started Today</h2>
+            <p>Have questions or want to step into digital banking? Drop us a note below and our support desk will contact you.</p>
+            
+            <form id="form1" novalidate>
+                <div id="lblStatusMessage" class="status-alert"></div>
+
+                <div class="form-group">
+                    <label for="txtFullName">Full Name</label>
+                    <input type="text" id="txtFullName" class="form-control" placeholder="Your full name" />
+                    <span class="error-text" id="errFullName"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="txtEmail">Email Address</label>
+                    <input type="email" id="txtEmail" class="form-control" placeholder="username@example.com" />
+                    <span class="error-text" id="errEmail"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="txtSubject">Subject</label>
+                    <input type="text" id="txtSubject" class="form-control" placeholder="How can we help you?" />
+                    <span class="error-text" id="errSubject"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="txtMessage">Message</label>
+                    <textarea id="txtMessage" class="form-control" rows="5" placeholder="Type your detailed message here..."></textarea>
+                    <span class="error-text" id="errMessage"></span>
+                </div>
+
+                <button type="button" id="btnSubmit" class="btn-submit">Send Message</button>
+            </form>
+        </div>
+
+        <div class="info-panel">
+            
+            <div class="info-section">
+                <h3>Contact Us</h3>
+                <div class="info-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <p>
+                        <strong>Address:</strong><br />
+                        University of Education, Winneba<br />
+                        Post Office Box 25, Winneba,<br />
+                        Central Region, Ghana
+                    </p>
+                </div>
+            </div>
+
+            <div class="info-section">
+                <h3>Email Support</h3>
+                <div class="info-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <p>
+                        <a href="mailto:customercare@sccdigitalbank.com">customercare@sccdigitalbank.com</a>
+                    </p>
+                </div>
+                <div class="info-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <p>
+                        <a href="mailto:customercare2@sccdigitalbank.com">customercare2@sccdigitalbank.com</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="info-section">
+                <h3>System Status</h3>
+                <div class="info-item">
+                    <i class="fa-solid fa-clock"></i>
+                    <p>
+                        <strong>Digital Platform:</strong> 24/7 Monitored Online<br />
+                        <strong>Support Desk:</strong> Monday - Friday (08:00 - 17:00 GMT)
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <button type="button" id="btnBackToTop" title="Go to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script src="js/common.js"></script>
+    <script src="js/contact.js"></script>
+</body>
+</html>

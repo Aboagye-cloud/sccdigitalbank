@@ -1,0 +1,101 @@
+
+html, body {
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Let every image shrink to fit its container on small screens */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ---- Active nav link (highlights the current page) ---- */
+nav a.active {
+    color: #00a896;
+    border-bottom: 2px solid #00a896;
+    padding-bottom: 4px;
+}
+
+/* ---- Back to Top button (shared, appears on every page) ---- */
+#btnBackToTop {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 999;
+    border: none;
+    outline: none;
+    background-color: #00a896;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 18px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#btnBackToTop:hover {
+    background-color: #028074;
+    transform: scale(1.1);
+}
+
+/* ---- Form validation states (contact + services forms) ---- */
+.form-control.invalid,
+.form-control-input.invalid {
+    border-color: #dc3545 !important;
+    background-color: #fff5f5;
+}
+
+.error-text {
+    display: none;
+    color: #dc3545;
+    font-size: 13px;
+    margin-top: 6px;
+}
+
+.error-text.show {
+    display: block;
+}
+
+/* ---- Support page search: hide non-matching results ---- */
+.category-card.hidden-by-search,
+.faq-item.hidden-by-search {
+    display: none;
+}
+
+.no-results-message {
+    display: none;
+    text-align: center;
+    color: #888;
+    padding: 20px;
+    font-size: 15px;
+}
+
+.no-results-message.show {
+    display: block;
+}
+
+/* ---- Extra small mobile refinement (phones under 480px) ---- */
+@media (max-width: 480px) {
+    .logo-text {
+        font-size: 18px;
+    }
+    .bank-logo {
+        height: 55px;
+    }
+    nav a {
+        font-size: 13px;
+        margin: 4px 8px;
+    }
+    #btnBackToTop {
+        bottom: 20px;
+        right: 20px;
+        padding: 12px;
+        font-size: 15px;
+    }
+}

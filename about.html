@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCC Digital Bank - About Us</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="css/common.css" />
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #ffffff;
+            color: #fff;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .bank-logo {
+            height: 100px;
+            width: auto;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: #00a896;
+        }
+
+        nav a {
+            color: #000000;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 15px;
+            transition: color 0.3s;
+            font-weight: bold; 
+        }
+
+        nav a:hover {
+            color: #00a896;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .about-banner {
+            background-color: #f0faf8;
+            border-left: 5px solid #00a896;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 0 6px 6px 0;
+        }
+
+        h2 {
+            color: #00a896;
+            margin-top: 0;
+            font-size: 32px;
+        }
+
+        h3 {
+            color: #0056b3;
+            margin-top: 30px;
+            font-size: 22px;
+            border-bottom: 2px solid #f4f7f6;
+            padding-bottom: 5px;
+        }
+        
+        p {
+            font-size: 16px;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        @media (max-width: 900px) {
+            .container { 
+                margin: 20px;
+                padding: 25px;
+            }
+            header {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            .bank-logo {
+                height: 70px;
+            }
+            nav {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+            nav a {
+                margin: 5px 10px;
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                margin: 12px;
+                padding: 18px;
+            }
+            h2 {
+                font-size: 24px;
+            }
+            h3 {
+                font-size: 18px;
+            }
+            p {
+                font-size: 15px;
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="images/logo.png" alt="SCC Bank Logo" class="bank-logo" />
+            <span class="logo-text">SCC DIGITAL BANK</span>
+        </div>
+        <nav>
+            <a href="index.html">Home</a> <a href="services.html">Services</a>
+            <a href="about.html" class="active">About Us</a>
+            <a href="blog.html">Blog</a>
+            <a href="careers.html">Careers</a>
+            <a href="contact.html">Contact</a>
+            <a href="support.html">Support</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        
+        <div class="about-banner">
+            <h2>About SCC Digital Bank</h2>
+        </div>
+        
+        <p>Founded with a vision to redefine financial freedom, SCC Digital Bank combines innovative financial technology with world-class security to deliver a seamless banking experience. We are committed to helping individuals and businesses manage their finances with confidence through fast, secure, and user-friendly digital solutions.</p>
+        
+        <h3>Our Global Impact & Vision</h3>
+        
+        <p>Serving millions of customers worldwide, we provide intuitive tools for saving, investing, transferring funds, and achieving long-term financial goals. Our customer-first approach, advanced technology, and unwavering commitment to security empower our clients to grow their wealth and access banking services anytime, anywhere. At SCC Digital Bank, we are shaping the future of banking—making financial success more accessible, convenient, and secure for everyone.</p>
+
+    </div>
+
+    <button type="button" id="btnBackToTop" title="Go to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script src="js/common.js"></script>
+</body>
+</html>
