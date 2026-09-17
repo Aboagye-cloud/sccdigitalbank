@@ -1,4 +1,10 @@
+/* ============================================================
+   SHARED ACROSS EVERY PAGE
+   Back-to-top button, active nav link, form validation states,
+   support search results, and extra small-screen refinements.
+   ============================================================ */
 
+/* Prevent unwanted horizontal scroll on small screens */
 html, body {
     overflow-x: hidden;
 }
@@ -80,18 +86,134 @@ nav a.active {
     display: block;
 }
 
-/* ---- Extra small mobile refinement (phones under 480px) ---- */
-@media (max-width: 480px) {
-    .logo-text {
-        font-size: 18px;
+/* ============================================================
+   MOBILE NAVIGATION — HAMBURGER MENU
+   Replaces the old "wrap everything and shrink it" mobile nav
+   with a proper slide-down menu triggered by a hamburger icon.
+   ============================================================ */
+
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 26px;
+    height: 19px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1100;
+}
+
+.nav-toggle span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #0c2340;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.nav-toggle.open span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.nav-toggle.open span:nth-child(2) {
+    opacity: 0;
+}
+.nav-toggle.open span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+@media (max-width: 900px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+        position: relative;
+        gap: 0;
+        padding: 12px 5%;
     }
+
+    .logo-container {
+        gap: 8px;
+    }
+
     .bank-logo {
-        height: 55px;
+        height: 48px;
     }
+
+    .logo-text {
+        font-size: 16px;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #ffffff;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+        padding: 8px 0;
+        gap: 0;
+        border-top: 1px solid #eef1f4;
+    }
+
+    nav.open {
+        display: flex;
+    }
+
     nav a {
-        font-size: 13px;
-        margin: 4px 8px;
+        margin: 0;
+        padding: 16px 24px;
+        font-size: 16px;
+        border-bottom: 1px solid #f4f4f4;
+        text-align: left;
     }
+
+    nav a:last-child {
+        border-bottom: none;
+    }
+
+    nav a.active {
+        background-color: #f0faf8;
+        border-left: 3px solid #00a896;
+        padding-left: 21px;
+    }
+}
+
+/* ============================================================
+   GENERAL MOBILE POLISH — buttons, forms, spacing
+   ============================================================ */
+@media (max-width: 600px) {
+    .btn-cta,
+    .btn-submit,
+    .btn-ticket {
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+        display: block;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 15px;
+    }
+
+    .form-control,
+    .form-control-input,
+    .search-input {
+        font-size: 16px; /* prevents auto-zoom on iOS when tapping inputs */
+        padding: 12px 14px;
+    }
+
     #btnBackToTop {
         bottom: 20px;
         right: 20px;
