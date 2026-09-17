@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SCC Digital Bank - Our Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #ffffff;
+            color: #fff;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .bank-logo {
+            height: 100px;
+            width: auto;
+        }
+        .logo-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: #00a896;
+        }
+        nav a {
+            color: #000000;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 15px;
+            transition: color 0.3s;
+            font-weight: bold; 
+        }
+        nav a:hover {
+            color: #00a896;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        @media (max-width: 900px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            nav {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+            nav a {
+                margin: 5px 10px;
+                font-size: 14px;
+            }
+        }
+        @media (max-width: 768px) {
+            .container { 
+                grid-template-columns: 1fr; 
+                margin: 20px;
+                padding: 20px;
+            }
+        }
+        @media (max-width: 480px) {
+            .container {
+                margin: 12px;
+                padding: 15px;
+            }
+        }
+        .info-section h2 {
+            color: #00a896;
+            margin-top: 0;
+        }
+        .info-section h3 {
+            color: #0c2340;
+            margin-top: 25px;
+            border-bottom: 2px solid #f4f7f6;
+            padding-bottom: 5px;
+        }
+        .form-section {
+            background: #f9fbfb;
+            padding: 25px;
+            border-radius: 6px;
+            border: 1px solid #e2e8f0;
+            align-self: start;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        .form-control-input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-family: inherit;
+        }
+        .btn-submit {
+            background-color: #00a896;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .btn-submit:hover {
+            background-color: #008576;
+        }
+        .alert-success {
+            display: none;
+            background-color: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+    </style>
+    <link rel="stylesheet" href="css/common.css" />
+</head>
+<body>
+
+    <form id="mainForm" novalidate>
+        <header>
+            <div class="logo-container">
+                <img src="images/logo.png" alt="SCC Bank Logo" class="bank-logo" />
+                <span class="logo-text">SCC DIGITAL BANK</span>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <nav id="mainNav">
+                <a href="index.html">Home</a>
+                <a href="services.html" class="active">Services</a>
+                <a href="about.html">About Us</a>
+                <a href="blog.html">Blog</a>
+                <a href="careers.html">Careers</a>
+                <a href="contact.html">Contact</a>
+                <a href="support.html">Support</a>
+            </nav>
+        </header>
+
+        <div class="container">
+            <div class="info-section">
+                <h2>Our Financial Services</h2>
+                
+                <h3>Personal Banking</h3>
+                <p>Take control of your finances with our modern banking solutions. Enjoy high-yield savings accounts, flexible checking accounts, and seamless digital banking with zero hidden fees. Whether you're saving for the future or managing daily expenses, SCC Digital Bank makes banking simple, secure, and rewarding.</p>
+                
+                <h3>Business Solutions</h3>
+                <p>Empower your business with financial tools designed for growth. From tailored merchant services and flexible business loans to efficient payroll management systems, we provide the support and technology businesses need to operate smoothly and scale confidently.</p>
+                
+                <h3>Next-Gen Security</h3>
+                <p>Your security is our priority. SCC Digital Bank protects your finances with advanced 256-bit encryption, multi-factor authentication, and real-time fraud alerts. Our state-of-the-art security systems help ensure your money and personal information remain safe around the clock.</p>
+            </div>
+
+            <div class="form-section">
+                <h3>Get Started Today</h3>
+
+                <div class="alert-success" id="successMessage"></div>
+
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" class="form-control-input" />
+                    <span class="error-text" id="errFullName"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" class="form-control-input" />
+                    <span class="error-text" id="errEmail"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="accountType">Interested In</label>
+                    <select id="accountType" class="form-control-input">
+                        <option value="Personal">Personal Banking</option>
+                        <option value="Business">Business Solutions</option>
+                    </select>
+                </div>
+                
+                <button type="button" id="btnSubmit" class="btn-submit">Submit Application</button>
+            </div>
+        </div>
+    </form>
+
+    <button type="button" id="btnBackToTop" title="Go to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script src="js/common.js"></script>
+    <script src="js/services.js"></script>
+</body>
+</html>
